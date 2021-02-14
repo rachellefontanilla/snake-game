@@ -4,7 +4,7 @@ from snake import Snake
 from scoreboard import Scoreboard
 import time
 
-BOUNDARY = 280
+BOUNDARY = 290
 
 """ Screen Setup """
 screen = Screen()
@@ -37,7 +37,12 @@ while game_is_on:
         scoreboard.add_to_score()
 
     # Detect collision with wall
-    if snake.head.xcor() > BOUNDARY or snake.head.xcor() < -BOUNDARY or snake.head.ycor() > BOUNDARY or snake.head.ycor() < -BOUNDARY:
+    if (
+        snake.head.xcor() > BOUNDARY
+        or snake.head.xcor() < -BOUNDARY
+        or snake.head.ycor() > BOUNDARY
+        or snake.head.ycor() < -BOUNDARY
+    ):
         game_is_on = False
         scoreboard.game_over()
 
